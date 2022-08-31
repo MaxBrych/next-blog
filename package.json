@@ -11,6 +11,8 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.7",
+    "@sanity/image-url": "^0.140.22",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
