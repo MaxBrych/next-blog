@@ -5,7 +5,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: { fontFamily: { inter: "Inter", "roc-grotesk": "'Roc Grotesk'" } },
+    extend: { fontFamily: { inter: "Inter", "roc-grotesk": "Roc Grotesk" } },
     colors: {
       gray: {
         100: "#adadad",

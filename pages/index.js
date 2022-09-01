@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import imageUrlBuilder from "@sanity/image-url";
 import { useState, useEffect } from "react";
-import BlockContent from "@sanity/block-content-to-react";
 import Link from "next/Link";
 import Blogpost from "../components/Blogpost";
 
@@ -87,7 +86,7 @@ export default function Home({ posts }) {
   );
 }
 
-export const getServerSideProps = async (pageContext) => {
+export const getServerSideProps = async () => {
   const query = encodeURIComponent('*[ _type == "post" ]');
   const url = `https://94cropdl.api.sanity.io/v1/data/query/production?query=${query}`;
   const result = await fetch(url).then((res) => res.json());

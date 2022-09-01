@@ -4,7 +4,6 @@ export default function Blogpost({
   timeToRead,
   createdOn,
   image,
-  posts,
 }) {
   return (
     <div className="self-stretch h-[304px] shrink-0 flex flex-col items-start justify-start gap-[4px] cursor-pointer text-left text-lg text-white font-roc-grotesk lg:w-full">
@@ -37,7 +36,7 @@ export default function Blogpost({
   );
 }
 
-export const getServerSideProps = async (pageContext) => {
+export const getServerSideProps = async () => {
   const query = encodeURIComponent('*[_type== "post]');
   const url = `https://94cropdl.api.sanity.io/v1/data/query/production?query=${query}`;
   const result = await fetch(url).then((res) => res.json());
