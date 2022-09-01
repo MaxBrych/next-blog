@@ -1,20 +1,11 @@
-import type { NextPage } from "next";
-
-type PostType = {
-  title?: string;
-  sneakPeak?: string;
-  timeToRead?: string;
-  createdOn?: string;
-  image?: string;
-};
-
-const Post: NextPage<PostType> = ({
+export default function Blogpost({
   title,
   sneakPeak,
   timeToRead,
   createdOn,
   image,
-}) => {
+  posts,
+}) {
   return (
     <div className="self-stretch h-[304px] shrink-0 flex flex-col items-start justify-start gap-[4px] cursor-pointer text-left text-lg text-white font-roc-grotesk lg:w-full">
       <div className="flex-[1] self-stretch [border:0.5px_solid_rgba(255,_255,_255,_0.24)] box-border relative overflow-hidden flex flex-row items-center justify-center">
@@ -29,11 +20,11 @@ const Post: NextPage<PostType> = ({
           <div className="self-stretch relative tracking-[-0.4px] leading-[24px] font-medium inline-block">
             {title}
           </div>
-          <div className="self-stretch relative text-base font-inter text-gray-200 inline-block">
+          <div className="relative self-stretch inline-block text-base text-gray-200 font-inter">
             {sneakPeak}
           </div>
         </div>
-        <div className="self-stretch flex flex-row items-start justify-between text-sm font-inter">
+        <div className="flex flex-row items-start self-stretch justify-between text-sm font-inter">
           <div className="relative leading-[24px] inline-block">
             {timeToRead}
           </div>
@@ -44,6 +35,24 @@ const Post: NextPage<PostType> = ({
       </div>
     </div>
   );
-};
+}
 
-export default Post;
+export const getServerSideProps = async (pageContext) => {
+  const query = encodeURIComponent('*[_type== "post]');
+  const url = `https://94cropdl.api.sanity.io/v1/data/query/production?query=${query}`;
+  const result = await fetch(url).then((res) => res.json());
+
+  if (!result.result || !result.result.length) {
+    return {
+      props: {
+        posts: [],
+      },
+    };
+  } else {
+    return {
+      props: {
+        posts: result.result,
+      },
+    };
+  }
+};
