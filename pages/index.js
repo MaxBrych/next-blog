@@ -66,7 +66,7 @@ export default function Home({ posts }) {
         <div className="self-stretch flex flex-col items-start justify-start gap-[16px] text-left text-lg text-white font-roc-grotesk sm:w-full">
           {mappedPosts.length ? (
             mappedPosts.map((p, index) => (
-              <Link href={`./post/${p.slug.current}`}>
+              <Link href={`./post/${p.slug.current}`} key={index}>
                 <div>
                   <Blogpost
                     onClick={() => router.push(`./post/${p.slug.current}`)}
