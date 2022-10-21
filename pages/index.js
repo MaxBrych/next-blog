@@ -49,18 +49,10 @@ export default function Home({ posts }) {
             target="_blank"
             rel="noreferrer"
           >
-            <Image
-              className="relative w-[18px] h-[18px] shrink-0 overflow-hidden"
-              alt=""
-              src="./assets/akariconsgithubfill.svg"
-            />
+            <Image className="w-[18px] h-[18px]" alt="" src="" />
           </a>
           <a className="[text-decoration:none] rounded-[90px] bg-gray-300 w-[36px] h-[36px] shrink-0 flex flex-row p-[8px] box-border items-center justify-center">
-            <Image
-              className="relative w-[18px] h-[18px] shrink-0 overflow-hidden"
-              alt=""
-              src="./assets/akariconstwitterfill.svg"
-            />
+            <Image className="w-[18px] h-[18px]" alt="" src="" />
           </a>
         </div>
         <div className="self-stretch flex flex-col items-start justify-start gap-[16px] text-left text-lg text-white font-roc-grotesk sm:w-full">
