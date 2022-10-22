@@ -20,7 +20,7 @@ export default function Home({ posts }) {
         posts.map((p) => {
           return {
             ...p,
-            mainImage: imgBuilder.image(p.mainImage).width(520).height(240),
+            mainImage: imgBuilder.image(p.mainImage).width(540).height(240),
           };
         })
       );
@@ -31,7 +31,7 @@ export default function Home({ posts }) {
 
   console.log(mappedPosts);
   return (
-    <div className="relative bg-gray-500 shadow-[0px_4px_100px_rgba(255,_255,_255,_0.14)] [border:1px_solid_#fff] box-border w-full h-full flex flex-col p-[0px_64px] items-center justify-center md:pl-[24px] md:pr-[2px] md:box-border sm:pl-[16px] sm:pr-[16px] sm:box-border">
+    <div className="relative bg-gray-500 shadow-[0px_4px_100px_rgba(255,_255,_255,_0.14)] [border:1px_solid_#fff] box-border w-full h-screen flex flex-col p-[0px_64px] items-center justify-center md:pl-[24px] md:pr-[2px] md:box-border sm:pl-[0px] sm:pr-[0px] sm:box-border">
       <section className="rounded-[12px] w-[520px] flex flex-col p-[12px_0px] box-border items-start justify-center gap-[16px] text-left text-xl text-white font-roc-grotesk sm:w-full sm:rounded-[12px] sm:pl-[16px] sm:pr-[16px] sm:box-border">
         <div className="self-stretch flex flex-col items-start justify-start gap-[4px] md:w-full sm:w-full">
           <h1 className="m-[0] relative text-[inherit] tracking-[-0.4px] font-medium font-inherit inline-block sm:text-[32px]">
@@ -59,7 +59,7 @@ export default function Home({ posts }) {
           {mappedPosts.length ? (
             mappedPosts.map((p, index) => (
               <Link href={`./post/${p.slug.current}`} key={index}>
-                <div>
+                <div className="sm: w-full sm: ">
                   <Blogpost
                     onClick={() => router.push(`./post/${p.slug.current}`)}
                     key={index}
