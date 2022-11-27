@@ -17,7 +17,7 @@ export const Post = ({ body, title, image }) => {
   }, [image]);
 
   return (
-    <div className="relative bg-gray-500 w-full h-screen flex flex-col p-[32px_16px] box-border items-center justify-start text-left text-base text-white font-inter">
+    <div className="relative bg-[#101112] w-full h-screen flex flex-col p-[32px_16px] box-border items-center justify-start text-left text-base text-white font-inter">
       <div className="rounded-[12px] w-[640px] flex flex-col p-[32px_0px] box-border items-start justify-start md:w-full">
         <Link href="/">
           <a className="cursor-pointer text-white [text-decoration:none] flex flex-row items-center justify-start gap-[4px] text-[inherit]">
