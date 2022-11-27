@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import imageUrlBuilder from "@sanity/image-url";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Blogpost from "../components/Blogpost";
 import { AiFillInstagram, AiOutlineTwitter } from "react-icons/ai";
 import Head from "next/head";
